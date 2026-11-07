@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google" content="notranslate">
+<title>Tillya – Jewelry & Handmade Crafts</title>
+<meta name="description" content="Tillya brings together jewelry and handmade-craft stores from around the world: women, men, kids, baby, personalized, wedding, luxury, macramé, embroidery and DIY.">
+<meta name="theme-color" content="#2A0612">
+<link rel="icon" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1C040C;--bg2:#2A0612;--card:#3A0B1C;--card2:#4A1026;--gold:#E9B949;--gold2:#F7DE96;--turq:#2FC6B8;--text:#F7EBD9;--muted:#CDB8A6;--line:rgba(233,185,73,.28)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:radial-gradient(120% 60% at 70% 0%,#5A1230 0%,var(--bg2) 45%,var(--bg) 100%) fixed;background-color:var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,sans-serif}
+a{color:var(--gold2)}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+header.hero{padding:44px 16px 18px;text-align:center}
+.logo{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 30px rgba(0,0,0,.45)}
+h1{font:600 46px/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.18em;margin:14px 0 4px;background:linear-gradient(#FFF3C4,#E9B949 55%,#B07A22);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{color:var(--muted);margin:0 0 14px;font-weight:300}
+.divider{display:flex;align-items:center;gap:10px;justify-content:center;margin:8px auto 14px;max-width:260px}
+.divider:before,.divider:after{content:"";flex:1;height:1px;background:var(--gold)}
+.divider i{width:10px;height:10px;transform:rotate(45deg);background:var(--turq);border:2px solid var(--gold)}
+.disc{font-size:13px;color:var(--muted);background:rgba(0,0,0,.2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;text-align:left}
+.disc button{background:none;border:0;color:var(--gold2);font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+.disc p{margin:8px 0 0;display:none}.disc.open p{display:block}
+nav.bar{position:sticky;top:0;z-index:9;background:rgba(28,4,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.bar .wrap{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+nav.bar a{flex:none;text-decoration:none;color:var(--muted);font-size:14px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
+nav.bar a.on{color:#2A0612;background:var(--gold);border-color:var(--gold);font-weight:600}
+.lang{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.25);color:var(--gold2);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font:14px Inter,sans-serif}
+section{margin:18px 0}
+details{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary .ic{font-size:26px;width:36px;text-align:center}
+summary h2{font:600 24px/1.2 "Cormorant Garamond",Georgia,serif;margin:0;color:var(--gold2)}
+summary small{display:block;color:var(--muted);font-size:13px}
+summary:after{content:"+";margin-left:auto;color:var(--gold);font-size:24px}
+details[open] summary:after{content:"–"}
+.body{padding:0 16px 16px}
+.store{display:flex;gap:12px;align-items:center;background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:10px}
+.store div{flex:1;min-width:0}.store b{display:block;font-weight:600}.store div span{color:var(--muted);font-size:13px}
+.go{flex:none;text-decoration:none;background:linear-gradient(#F7DE96,#E9B949 60%,#C9922E);color:#2A0612;font-weight:600;font-size:14px;padding:10px 14px;border-radius:999px;text-align:center}
+.go em{display:block;font-style:normal;font-weight:400;font-size:11px}
+h3{font:600 20px "Cormorant Garamond",Georgia,serif;color:var(--gold2);margin:18px 0 4px}
+.guide p,.guide li{color:var(--text);font-size:15px}.guide ul,.guide ol{padding-left:20px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+td,th{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left}th{color:var(--gold2);font-weight:600}
+.tool{background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:10px}
+.tool input,.tool select{width:100%;margin-top:6px;padding:10px;border-radius:10px;border:1px solid var(--line);background:#24070F;color:var(--text);font:16px Inter,sans-serif}
+.out{margin-top:10px;font-size:18px;color:var(--gold2);min-height:1.4em}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:24px 0 40px}
+footer a{margin:0 8px}
+[dir=rtl] summary:after{margin-left:0;margin-right:auto}
+</style>
+</head>
+<body>
+<select class="lang notranslate" id="lang" aria-label="Language"></select>
+<header class="hero wrap">
+<svg class="logo" viewBox="0 0 1024 1024" aria-hidden="true"><defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF1B8"/><stop offset=".35" stop-color="#F2C75C"/><stop offset=".65" stop-color="#C9922E"/><stop offset="1" stop-color="#8A5A14"/></linearGradient>
+<linearGradient id="goldv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF3C4"/><stop offset=".4" stop-color="#E9B949"/><stop offset="1" stop-color="#9C6418"/></linearGradient>
+<linearGradient id="turq" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B8FFF4"/><stop offset=".45" stop-color="#2FC6B8"/><stop offset="1" stop-color="#0A6F72"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".42" r=".5"><stop offset="0" stop-color="#FFE7A0" stop-opacity=".28"/><stop offset="1" stop-color="#FFE7A0" stop-opacity="0"/></radialGradient>
+<radialGradient id="bgB" cx=".5" cy=".4" r=".8"><stop offset="0" stop-color="#6B1430"/><stop offset="1" stop-color="#230510"/></radialGradient></defs>
+<rect width="1024" height="1024" fill="url(#bgB)"/><circle cx="512" cy="560" r="360" fill="url(#glow)"/>
+<circle cx="790.9" cy="392.0" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="777.3" cy="416.7" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="760.6" cy="439.9" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="741.0" cy="461.5" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="718.6" cy="481.3" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="693.8" cy="498.8" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="666.9" cy="514.1" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="638.2" cy="526.8" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="608.0" cy="536.9" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="576.6" cy="544.1" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="544.5" cy="548.5" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="512.0" cy="550.0" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="479.5" cy="548.5" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="447.4" cy="544.1" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="416.0" cy="536.9" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="385.8" cy="526.8" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="357.1" cy="514.1" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="330.2" cy="498.8" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="305.4" cy="481.3" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="283.0" cy="461.5" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="263.4" cy="439.9" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="246.7" cy="416.7" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/><circle cx="233.1" cy="392.0" r="15" fill="url(#gold)" stroke="#7A4A10" stroke-width="2"/>
+<g transform="translate(512 700)">
+<path d="M0 -110 C70 -40 95 20 95 60 A95 95 0 0 1 -95 60 C-95 20 -70 -40 0 -110Z" fill="url(#gold)"/>
+<path d="M0 -82 C52 -30 72 20 72 58 A72 72 0 0 1 -72 58 C-72 20 -52 -30 0 -82Z" fill="url(#turq)"/>
+<path d="M-30 30 Q-34 -10 -8 -46" fill="none" stroke="#E6FFFB" stroke-width="10" stroke-linecap="round" opacity=".8"/>
+<circle cx="0" cy="-128" r="22" fill="none" stroke="url(#gold)" stroke-width="12"/></g>
+<path transform="translate(700 470) scale(.8)" d="M0-40 C4-8 8-4 40 0 C8 4 4 8 0 40 C-4 8 -8 4 -40 0 C-8-4 -4-8 0-40Z" fill="#FFF6D6"/> <path transform="translate(330 560) scale(.5)" d="M0-40 C4-8 8-4 40 0 C8 4 4 8 0 40 C-4 8 -8 4 -40 0 C-8-4 -4-8 0-40Z" fill="#FFF6D6"/>
+</svg>
+
+<h1 class="notranslate">TILLYA</h1>
+<p class="tag">Jewelry &amp; handmade crafts from stores around the world</p>
+<div class="divider"><i></i></div>
+<div class="disc" id="disc">Why Tillya is free: we may earn a small commission when you shop through our links, at no extra cost to you. <button type="button" id="discBtn">About these links</button>
+<p>Tillya is an independent guide. Every button opens a partner store's own website, where you see their prices, shipping and returns. Purchases, payments and customer service happen on the store's site, not in Tillya.</p></div>
+</header>
+
+<nav class="bar"><div class="wrap" id="navbar">
+<a href="#women">Women</a><a href="#men">Men</a><a href="#kids">Kids &amp; Baby</a><a href="#personal">Personalized</a><a href="#wedding">Wedding</a><a href="#luxury">Luxury</a><a href="#handmade">Handmade</a><a href="#learn">Learn</a><a href="#business">Start a business</a><a href="#deals">Deals</a><a href="#guides">Guides</a>
+</div></nav>
+
+<main class="wrap">
+<section id="women"><details><summary><span class="ic">💍</span><div><h2>Women</h2><small>Necklaces, earrings, rings and bracelets</small></div></summary><div class="body">
+<div class="store"><div><b>Fashion &amp; fine jewelry</b><span>Necklaces, earrings, rings and bracelets</span></div><a class="go" data-link="italo-women" href="https://www.italojewelry.com/category-jewelry.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Italojewelry</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Designer jewelry from Italy</b><span>Jewels from international designer brands</span></div><a class="go" data-link="bern-women" href="https://www.bernardellistores.com/en-US/woman/jewels" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Bernardelli</span><em>Opens partner site ↗</em></a></div>
+</div></details></section>
+
+<section id="men"><details><summary><span class="ic">⌚</span><div><h2>Men</h2><small>Chains, rings, bracelets and designer pieces</small></div></summary><div class="body">
+<div class="store"><div><b>Jewelry for men</b><span>Rings, chains and bracelets</span></div><a class="go" data-link="italo-men" href="https://www.italojewelry.com/category-men.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Italojewelry</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Designer jewelry for men</b><span>Italian designer store</span></div><a class="go" data-link="bern-men" href="https://www.bernardellistores.com/en-US/man/jewels" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Bernardelli</span><em>Opens partner site ↗</em></a></div>
+</div></details></section>
+
+<section id="kids"><details><summary><span class="ic">🧸</span><div><h2>Kids &amp; Baby</h2><small>Small, light pieces for little ones</small></div></summary><div class="body">
+<p class="disc" style="margin-top:0">Safety tip: for babies and small children, choose short pieces with no loose small parts, and always supervise when they wear jewelry.</p>
+<div class="store"><div><b>Kids jewelry</b><span>Small earrings, bracelets and necklaces</span></div><a class="go" data-link="ae-kids" href="https://www.aliexpress.com/w/wholesale-kids-jewelry.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">AliExpress</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Baby jewelry</b><span>Name bracelets and keepsakes</span></div><a class="go" data-link="ae-baby" href="https://www.aliexpress.com/w/wholesale-baby-jewelry.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">AliExpress</span><em>Opens partner site ↗</em></a></div>
+</div></details></section>
+
+<section id="personal"><details><summary><span class="ic">✍️</span><div><h2>Personalized</h2><small>Names, initials and dates — a gift with meaning</small></div></summary><div class="body">
+<div class="store"><div><b>Personalized jewelry</b><span>Names, initials and engravings</span></div><a class="go" data-link="italo-personal" href="https://www.italojewelry.com/personalized.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Italojewelry</span><em>Opens partner site ↗</em></a></div>
+</div></details></section>
+
+<section id="wedding"><details><summary><span class="ic">💐</span><div><h2>Engagement &amp; Wedding</h2><small>Engagement rings and wedding bands</small></div></summary><div class="body">
+<div class="store"><div><b>Engagement rings</b><span>Rings for the big question</span></div><a class="go" data-link="italo-engage" href="https://www.italojewelry.com/category-engagement-rings.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Italojewelry</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Wedding bands</b><span>Bands for both partners</span></div><a class="go" data-link="italo-wedding" href="https://www.italojewelry.com/category-wedding-bands.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Italojewelry</span><em>Opens partner site ↗</em></a></div>
+</div></details></section>
+
+<section id="luxury"><details><summary><span class="ic">💎</span><div><h2>Luxury</h2><small>Pre-owned luxury jewelry and watches</small></div></summary><div class="body">
+<div class="store"><div><b>Pre-owned luxury</b><span>Jewelry and watches from luxury houses</span></div><a class="go" data-link="luxury" href="https://theluxurycloset.com/" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">The Luxury Closet</span><em>Opens partner site ↗</em></a></div>
+</div></details></section>
+
+<section id="handmade"><details><summary><span class="ic">🧶</span><div><h2>Handmade: Macramé, Embroidery &amp; DIY</h2><small>Supplies and ready-made handmade pieces</small></div></summary><div class="body">
+<h3>Macramé</h3><div class="store"><div><b>Macramé cord</b><span>Cotton cord in many colors and sizes</span></div><a class="go" data-link="ae-mac-cord" href="https://www.aliexpress.com/w/wholesale-macrame-cord.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">AliExpress</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Macramé kits</b><span>Everything you need to start</span></div><a class="go" data-link="ae-mac-kit" href="https://www.aliexpress.com/w/wholesale-macrame-kit.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">AliExpress</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Macramé bracelets</b><span>Ready-made handmade bracelets</span></div><a class="go" data-link="ae-mac-brace" href="https://www.aliexpress.com/w/wholesale-macrame-bracelet.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">AliExpress</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Macramé at wholesale prices</b><span>Cords and pieces in larger quantities</span></div><a class="go" data-link="dh-macrame" href="https://www.dhgate.com/wholesale/macrame.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">DHgate</span><em>Opens partner site ↗</em></a></div>
+
+<h3>Embroidery</h3><div class="store"><div><b>Embroidery kits</b><span>Hoop, threads, needles and pattern</span></div><a class="go" data-link="ae-emb-kit" href="https://www.aliexpress.com/w/wholesale-embroidery-kit.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">AliExpress</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Embroidery thread</b><span>Floss sets in many colors</span></div><a class="go" data-link="ae-emb-thread" href="https://www.aliexpress.com/w/wholesale-embroidery-thread.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">AliExpress</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Embroidered earrings</b><span>Handmade embroidered jewelry</span></div><a class="go" data-link="ae-emb-ear" href="https://www.aliexpress.com/w/wholesale-embroidered-earrings.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">AliExpress</span><em>Opens partner site ↗</em></a></div>
+
+<h3>Make your own jewelry</h3><div class="store"><div><b>Jewelry-making supplies</b><span>Clasps, wire, pliers and findings</span></div><a class="go" data-link="ae-diy-supp" href="https://www.aliexpress.com/w/wholesale-jewelry-making-supplies.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">AliExpress</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Beads</b><span>Glass, crystal and stone beads</span></div><a class="go" data-link="ae-diy-beads" href="https://www.aliexpress.com/w/wholesale-beads-for-jewelry-making.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">AliExpress</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Beads at wholesale prices</b><span>Silver and decorative beads</span></div><a class="go" data-link="dh-beads" href="https://www.dhgate.com/wholesale/jewelry-beads.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">DHgate</span><em>Opens partner site ↗</em></a></div>
+
+</div></details></section>
+
+<section id="learn"><details><summary><span class="ic">🎓</span><div><h2>Learn</h2><small>Online courses to master the craft</small></div></summary><div class="body">
+<div class="store"><div><b>Macramé courses</b><span>Learn knots and projects step by step</span></div><a class="go" data-link="udemy-mac" href="https://www.udemy.com/courses/search/?q=macrame" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Udemy</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Embroidery courses</b><span>From basic stitches to full designs</span></div><a class="go" data-link="udemy-emb" href="https://www.udemy.com/courses/search/?q=embroidery" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Udemy</span><em>Opens partner site ↗</em></a></div>
+<div class="store"><div><b>Jewelry-making courses</b><span>Beading, wire work and more</span></div><a class="go" data-link="udemy-jew" href="https://www.udemy.com/courses/search/?q=jewelry+making" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Udemy</span><em>Opens partner site ↗</em></a></div>
+</div></details></section>
+
+<section id="business"><details><summary><span class="ic">📦</span><div><h2>Start a jewelry business</h2><small>Buy wholesale and sell your own collection</small></div></summary><div class="body guide">
+<p>Many small jewelry businesses start by buying wholesale, adding their own style (packaging, combinations, handmade touches) and selling on social media or at local markets.</p>
+<ol><li>Pick one niche first: for example stainless steel, macramé bracelets or personalized pieces.</li><li>Order small samples before buying in quantity, and check the quality yourself.</li><li>Add up the real cost: product + shipping + import fees + packaging.</li><li>Take clear photos in natural light and tell the story of each piece.</li></ol>
+<div class="store"><div><b>Wholesale from manufacturers</b><span>Search "wholesale jewelry" or "macrame cord"</span></div><a class="go" data-link="alibaba" href="https://www.alibaba.com/" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Alibaba</span><em>Opens partner site ↗</em></a></div>
+</div></details></section>
+
+<section id="deals"><details><summary><span class="ic">🏷️</span><div><h2>Deals</h2><small>Clearance and sale pages</small></div></summary><div class="body">
+<div class="store"><div><b>Clearance</b><span>Discounted pieces while stock lasts</span></div><a class="go" data-link="italo-deals" href="https://www.italojewelry.com/clearance.html" target="_blank" rel="noopener sponsored">Shop on <span class="notranslate">Italojewelry</span><em>Opens partner site ↗</em></a></div>
+</div></details></section>
+
+<section id="guides"><details><summary><span class="ic">📖</span><div><h2>Guides</h2><small>Ring sizes, birthstones, care and basic knots</small></div></summary><div class="body guide">
+<h3>Find your ring size</h3>
+<p>Wrap a thin strip of paper or string around the base of your finger, mark where it meets, and measure the length in millimeters.</p>
+<div class="tool"><label>Finger circumference (mm)<input id="circ" type="number" inputmode="decimal" min="40" max="80" placeholder="e.g. 54"></label><div class="out" id="ringOut"></div></div>
+<table><tr><th>US size</th><th>Inner diameter</th><th>Circumference</th></tr>
+<tr><td>5</td><td>15.7 mm</td><td>49.3 mm</td></tr><tr><td>6</td><td>16.5 mm</td><td>51.9 mm</td></tr><tr><td>7</td><td>17.3 mm</td><td>54.4 mm</td></tr><tr><td>8</td><td>18.1 mm</td><td>57.0 mm</td></tr><tr><td>9</td><td>19.0 mm</td><td>59.5 mm</td></tr><tr><td>10</td><td>19.8 mm</td><td>62.1 mm</td></tr><tr><td>11</td><td>20.6 mm</td><td>64.6 mm</td></tr><tr><td>12</td><td>21.4 mm</td><td>67.2 mm</td></tr></table>
+<p>Tip: measure at the end of the day, when fingers are slightly larger. Between two sizes? Choose the larger one.</p>
+
+<h3>Birthstone finder</h3>
+<div class="tool"><label>Birth month<select id="month"><option value="">Choose a month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select></label><div class="out" id="stoneOut"></div></div>
+
+<h3>Know your metals</h3>
+<ul><li><b>Stainless steel (316L):</b> resists water and tarnish; great for everyday wear.</li><li><b>Sterling silver (925):</b> 92.5% silver; can darken over time, polish with a soft cloth.</li><li><b>Gold-plated:</b> a thin gold layer over another metal; keep it away from water and perfume.</li><li><b>Nickel-free:</b> look for this label if you have sensitive skin.</li></ul>
+
+<h3>Jewelry care</h3>
+<ul><li>Put jewelry on last, after perfume, lotion and makeup.</li><li>Take it off to swim, shower, clean or exercise.</li><li>Store each piece separately so chains don't tangle or scratch.</li><li>Clean gently with a soft, dry cloth.</li></ul>
+
+<h3>Two basic macramé knots</h3>
+<ol><li><b>Square knot:</b> with four cords, cross the left cord over the two center cords and under the right one; bring the right cord under the center and up through the left loop. Repeat in the opposite direction.</li><li><b>Half hitch:</b> wrap a working cord around a holding cord and pull it through its own loop. Repeat to make a spiral.</li></ol>
+</div></details></section>
+
+<p class="disc">Tillya uses affiliate links: if you buy through them, we may earn a commission at no extra cost to you. Prices, availability and shipping are set by each store.</p>
+</main>
+<footer><a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Service</a>·<a href="mailto:hpind77@gmail.com">Contact</a><br><span class="notranslate" translate="no">© Tillya · DriftforgeDev</span></footer>
+
+<script>
+const LINKS={"italo-women":{"primary":"https://ad.admitad.com/g/l926tcw2smf977a19dec87e51e1a66/?ulp=https%3A%2F%2Fwww.italojewelry.com%2Fcategory-jewelry.html","backup":"","official":"https://www.italojewelry.com/category-jewelry.html","active":"primary"},"italo-men":{"primary":"https://ad.admitad.com/g/l926tcw2smf977a19dec87e51e1a66/?ulp=https%3A%2F%2Fwww.italojewelry.com%2Fcategory-men.html","backup":"","official":"https://www.italojewelry.com/category-men.html","active":"primary"},"italo-personal":{"primary":"https://ad.admitad.com/g/l926tcw2smf977a19dec87e51e1a66/?ulp=https%3A%2F%2Fwww.italojewelry.com%2Fpersonalized.html","backup":"","official":"https://www.italojewelry.com/personalized.html","active":"primary"},"italo-engage":{"primary":"https://ad.admitad.com/g/l926tcw2smf977a19dec87e51e1a66/?ulp=https%3A%2F%2Fwww.italojewelry.com%2Fcategory-engagement-rings.html","backup":"","official":"https://www.italojewelry.com/category-engagement-rings.html","active":"primary"},"italo-wedding":{"primary":"https://ad.admitad.com/g/l926tcw2smf977a19dec87e51e1a66/?ulp=https%3A%2F%2Fwww.italojewelry.com%2Fcategory-wedding-bands.html","backup":"","official":"https://www.italojewelry.com/category-wedding-bands.html","active":"primary"},"italo-deals":{"primary":"https://ad.admitad.com/g/l926tcw2smf977a19dec87e51e1a66/?ulp=https%3A%2F%2Fwww.italojewelry.com%2Fclearance.html","backup":"","official":"https://www.italojewelry.com/clearance.html","active":"primary"},"bern-women":{"primary":"https://invl.me/clo5vr5","backup":"","official":"https://www.bernardellistores.com/en-US/woman/jewels","active":"primary"},"bern-men":{"primary":"https://invl.me/clo5vtu","backup":"","official":"https://www.bernardellistores.com/en-US/man/jewels","active":"primary"},"luxury":{"primary":"https://ad.admitad.com/g/quh26xvvn8f977a19dec4413e8fc1b/","backup":"","official":"https://theluxurycloset.com/","active":"primary"},"ae-kids":{"primary":"https://rzekl.com/g/1e8d114494f977a19dec16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-kids-jewelry.html","backup":"","official":"https://www.aliexpress.com/w/wholesale-kids-jewelry.html","active":"primary"},"ae-baby":{"primary":"https://rzekl.com/g/1e8d114494f977a19dec16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-baby-jewelry.html","backup":"","official":"https://www.aliexpress.com/w/wholesale-baby-jewelry.html","active":"primary"},"ae-mac-cord":{"primary":"https://rzekl.com/g/1e8d114494f977a19dec16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-macrame-cord.html","backup":"","official":"https://www.aliexpress.com/w/wholesale-macrame-cord.html","active":"primary"},"ae-mac-kit":{"primary":"https://rzekl.com/g/1e8d114494f977a19dec16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-macrame-kit.html","backup":"","official":"https://www.aliexpress.com/w/wholesale-macrame-kit.html","active":"primary"},"ae-mac-brace":{"primary":"https://rzekl.com/g/1e8d114494f977a19dec16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-macrame-bracelet.html","backup":"","official":"https://www.aliexpress.com/w/wholesale-macrame-bracelet.html","active":"primary"},"dh-macrame":{"primary":"https://sale.dhgate.com/8SQa1x08","backup":"","official":"https://www.dhgate.com/wholesale/macrame.html","active":"primary"},"ae-emb-kit":{"primary":"https://rzekl.com/g/1e8d114494f977a19dec16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-embroidery-kit.html","backup":"","official":"https://www.aliexpress.com/w/wholesale-embroidery-kit.html","active":"primary"},"ae-emb-thread":{"primary":"https://rzekl.com/g/1e8d114494f977a19dec16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-embroidery-thread.html","backup":"","official":"https://www.aliexpress.com/w/wholesale-embroidery-thread.html","active":"primary"},"ae-emb-ear":{"primary":"https://rzekl.com/g/1e8d114494f977a19dec16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-embroidered-earrings.html","backup":"","official":"https://www.aliexpress.com/w/wholesale-embroidered-earrings.html","active":"primary"},"ae-diy-supp":{"primary":"https://rzekl.com/g/1e8d114494f977a19dec16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-jewelry-making-supplies.html","backup":"","official":"https://www.aliexpress.com/w/wholesale-jewelry-making-supplies.html","active":"primary"},"ae-diy-beads":{"primary":"https://rzekl.com/g/1e8d114494f977a19dec16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-beads-for-jewelry-making.html","backup":"","official":"https://www.aliexpress.com/w/wholesale-beads-for-jewelry-making.html","active":"primary"},"dh-beads":{"primary":"https://sale.dhgate.com/2fMiX708","backup":"","official":"https://www.dhgate.com/wholesale/jewelry-beads.html","active":"primary"},"udemy-mac":{"primary":"https://inr.deals/track?id=tru579161545&src=backend&url=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3Dmacrame","backup":"","official":"https://www.udemy.com/courses/search/?q=macrame","active":"primary"},"udemy-emb":{"primary":"https://inr.deals/track?id=tru579161545&src=backend&url=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3Dembroidery","backup":"","official":"https://www.udemy.com/courses/search/?q=embroidery","active":"primary"},"udemy-jew":{"primary":"https://inr.deals/track?id=tru579161545&src=backend&url=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3Djewelry%2Bmaking","backup":"","official":"https://www.udemy.com/courses/search/?q=jewelry+making","active":"primary"},"alibaba":{"primary":"https://rzekl.com/g/pm1aev55clf977a19dec219aa26f6f/","backup":"","official":"https://www.alibaba.com/","active":"primary"}};
+function apply(L){document.querySelectorAll('a[data-link]').forEach(a=>{const e=L[a.dataset.link];if(!e)return;const u=e[e.active]||e.primary||e.official;if(u)a.href=u;});}
+apply(LINKS);
+fetch('links.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j)apply(j)}).catch(()=>{});
+document.getElementById('discBtn').onclick=function(){const d=document.getElementById('disc');d.classList.toggle('open');this.textContent=d.classList.contains('open')?'Hide':'About these links';if(window.__tr)window.__tr(this);};
+// sticky nav highlight
+const navs=[...document.querySelectorAll('#navbar a')];
+function hl(){let cur=navs[0];const atEnd=innerHeight+scrollY>=document.body.scrollHeight-4;for(const a of navs){const s=document.querySelector(a.getAttribute('href'));if(s&&s.getBoundingClientRect().top<200)cur=a;}if(atEnd)cur=navs[navs.length-1];navs.forEach(a=>a.classList.toggle('on',a===cur));const bar=document.getElementById('navbar');if(!cur.classList.contains('was')){navs.forEach(a=>a.classList.remove('was'));cur.classList.add('was');bar.scrollTo({left:cur.offsetLeft-bar.clientWidth/2+cur.clientWidth/2,behavior:'smooth'});}}
+addEventListener('scroll',hl,{passive:true});
+navs.forEach(a=>a.addEventListener('click',()=>{const d=document.querySelector(a.getAttribute('href')+' details');if(d)d.open=true;}));
+// ring size
+document.getElementById('circ').oninput=function(){const c=parseFloat(this.value),o=document.getElementById('ringOut');if(!c||c<40||c>80){o.textContent='';return;}const s=Math.round((c-36.5)/2.55*2)/2;o.textContent='≈ US size '+s;if(window.__tr)window.__tr(o);};
+const STONES=['Garnet','Amethyst','Aquamarine','Diamond','Emerald','Pearl or Alexandrite','Ruby','Peridot','Sapphire','Opal or Tourmaline','Topaz or Citrine','Turquoise, Tanzanite or Zircon'];
+document.getElementById('month').onchange=function(){const o=document.getElementById('stoneOut');o.textContent=this.selectedIndex?'Your birthstone: '+STONES[this.selectedIndex-1]:'';if(window.__tr)window.__tr(o);};
+// --- automatic translation (own script, no Google banner) ---
+(function(){
+const LANGS={en:'English',es:'Español',pt:'Português',fr:'Français',de:'Deutsch',it:'Italiano',ar:'العربية',hi:'हिन्दी',id:'Bahasa Indonesia',ru:'Русский','zh-CN':'中文',ja:'日本語',ko:'한국어',tr:'Türkçe'};
+const sel=document.getElementById('lang');
+for(const k in LANGS){const o=document.createElement('option');o.value=k;o.textContent='🌐 '+LANGS[k];sel.appendChild(o);}
+let saved=null;try{saved=localStorage.getItem('tillya-lang')}catch(e){}
+let base=(navigator.languages&&navigator.languages[0]||navigator.language||'en');
+let lang=saved||(base.toLowerCase().startsWith('zh')?'zh-CN':base.split('-')[0]);
+if(!LANGS[lang])lang='en';sel.value=lang;
+let cache={};try{cache=JSON.parse(localStorage.getItem('tillya-tr-'+lang)||'{}')}catch(e){}
+function nodes(root){const out=[];const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(n){const p=n.parentElement;if(!p||/^(SCRIPT|STYLE|NOSCRIPT|OPTION)$/.test(p.tagName)||p.closest('.notranslate,[translate=no]')||!n.nodeValue.trim())return NodeFilter.FILTER_REJECT;return NodeFilter.FILTER_ACCEPT;}});while(w.nextNode())out.push(w.currentNode);return out;}
+async function tr(t){const k=t.trim();if(cache[k])return cache[k];const r=await fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='+lang+'&dt=t&q='+encodeURIComponent(k));const j=await r.json();let s=j[0].map(x=>x[0]).join('');if(/^[A-Z]/.test(k)&&s)s=s.charAt(0).toUpperCase()+s.slice(1);cache[k]=s;return s;}
+async function run(root){if(lang==='en')return;for(const n of nodes(root)){if(!n.__orig)n.__orig=n.nodeValue;const lead=n.__orig.match(/^\s*/)[0],trail=n.__orig.match(/\s*$/)[0];try{n.nodeValue=lead+await tr(n.__orig)+trail;}catch(e){}}try{localStorage.setItem('tillya-tr-'+lang,JSON.stringify(cache))}catch(e){}}
+window.__tr=el=>run(el);
+document.documentElement.lang=lang;document.documentElement.dir=(lang==='ar')?'rtl':'ltr';
+sel.onchange=()=>{try{localStorage.setItem('tillya-lang',sel.value)}catch(e){}location.reload();};
+addEventListener('load',()=>run(document.body));
+})();
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>
