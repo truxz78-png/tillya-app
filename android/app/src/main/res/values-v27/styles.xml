@@ -1,0 +1,12 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/tillya_bar</item>
+        <item name="colorPrimaryDark">@color/tillya_bar</item>
+        <item name="android:statusBarColor">@color/tillya_bar</item>
+        <item name="android:navigationBarColor">@color/tillya_bg</item>
+        <item name="android:windowBackground">@color/tillya_bg</item>
+        <item name="android:colorBackground">@color/tillya_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

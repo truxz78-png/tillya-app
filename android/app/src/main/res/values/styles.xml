@@ -1,0 +1,14 @@
+<resources>
+    <color name="tillya_bg">#1C040C</color>
+    <color name="tillya_bar">#2A0612</color>
+    <color name="ic_launcher_background">#5A1230</color>
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/tillya_bar</item>
+        <item name="colorPrimaryDark">@color/tillya_bar</item>
+        <item name="android:statusBarColor">@color/tillya_bar</item>
+        <item name="android:navigationBarColor">@color/tillya_bg</item>
+        <item name="android:windowBackground">@color/tillya_bg</item>
+        <item name="android:colorBackground">@color/tillya_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
