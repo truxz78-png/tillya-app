@@ -23,5 +23,7 @@
   "udemy-mac":     {"primary": "https://inr.deals/track?id=tru579161545&src=backend&url=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3Dmacrame", "backup": "", "official": "https://www.udemy.com/courses/search/?q=macrame", "active": "primary"},
   "udemy-emb":     {"primary": "https://inr.deals/track?id=tru579161545&src=backend&url=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3Dembroidery", "backup": "", "official": "https://www.udemy.com/courses/search/?q=embroidery", "active": "primary"},
   "udemy-jew":     {"primary": "https://inr.deals/track?id=tru579161545&src=backend&url=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3Djewelry%2Bmaking", "backup": "", "official": "https://www.udemy.com/courses/search/?q=jewelry+making", "active": "primary"},
-  "alibaba":       {"primary": "https://rzekl.com/g/pm1aev55clf977a19dec219aa26f6f/", "backup": "", "official": "https://www.alibaba.com/", "active": "primary"}
+  "alibaba":       {"primary": "https://rzekl.com/g/pm1aev55clf977a19dec219aa26f6f/", "backup": "", "official": "https://www.alibaba.com/", "active": "primary"},
+  "planet-express":{"primary": "https://planetexpress.com/?ref=378266", "backup": null, "official": "https://planetexpress.com", "active": "primary", "category": "shipping", "region": "worldwide"},
+  "shipito":       {"primary": "https://www.shipito.com/?id_affiliate=24923", "backup": null, "official": "https://www.shipito.com", "active": "primary", "category": "shipping", "region": "worldwide"}
 }

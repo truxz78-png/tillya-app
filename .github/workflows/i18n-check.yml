@@ -1,0 +1,15 @@
+name: Translation check
+on:
+  push:
+    paths: ['index.html', 'legal-tr.js', 'privacy.html', 'terms.html', 'src/**', 'tools/i18n_check.py']
+  schedule:
+    - cron: '27 13 * * 1'   # Mondays 9:27 a.m. Dominican Republic
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check translations
+        run: python3 tools/i18n_check.py

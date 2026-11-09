@@ -4,11 +4,11 @@ import os, sys, urllib.request
 
 SITE = os.environ.get("SITE", "https://truxz78-png.github.io/tillya-app/").rstrip("/") + "/"
 CHECKS = {
-    "index.html":   ["privacy.html", "terms.html", "translate.googleapis.com", "links.json", "Opens partner site", "Abalorios"],
+    "index.html":   ["privacy.html", "terms.html", "translate.googleapis.com", "links.json", "Opens partner site", "Abalorios", "Ship packages to your country"],
     "privacy.html": ["terms.html", "index.html", "legal-tr.js", "hpind77@gmail.com"],
     "terms.html":   ["privacy.html", "index.html", "legal-tr.js", "hpind77@gmail.com", "Dominican Republic"],
     "legal-tr.js":  ["translate.googleapis.com", "Volver a"],
-    "links.json":   ["primary", "official"],
+    "links.json":   ["primary", "official", "planetexpress.com/?ref=378266", "id_affiliate=24923"],
 }
 fails = []
 for page, needles in CHECKS.items():
