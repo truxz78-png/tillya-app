@@ -48,7 +48,7 @@ summary:after{content:"+";margin-left:auto;color:var(--gold);font-size:24px}
 details[open] summary:after{content:"–"}
 .body{padding:0 16px 16px}
 .store{display:flex;gap:12px;align-items:center;background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:10px}
-.store div{flex:1;min-width:0}.store b{display:block;font-weight:600}.store div span{color:var(--muted);font-size:13px}
+.store{flex-wrap:wrap}.store div{flex:1 1 180px;min-width:0}.store .go{flex:1 1 auto}.store b{display:block;font-weight:600}.store div span{color:var(--muted);font-size:13px}
 .go{flex:none;text-decoration:none;background:linear-gradient(#F7DE96,#E9B949 60%,#C9922E);color:#2A0612;font-weight:600;font-size:14px;padding:10px 14px;border-radius:999px;text-align:center}
 .go em{display:block;font-style:normal;font-weight:400;font-size:11px}
 h3{font:600 20px "Cormorant Garamond",Georgia,serif;color:var(--gold2);margin:18px 0 4px}
@@ -145,7 +145,6 @@ body.ship .shipbtn{background:var(--gold);color:#2A0612}body.ship .shipbtn b,bod
 <ol><li><b>Square knot:</b> with four cords, cross the left cord over the two center cords and under the right one; bring the right cord under the center and up through the left loop. Repeat in the opposite direction.</li><li><b>Half hitch:</b> wrap a working cord around a holding cord and pull it through its own loop. Repeat to make a spiral.</li></ol>
 </div></details></section>
 
-<p class="disc">Tillya uses affiliate links: if you buy through them, we may earn a commission at no extra cost to you. Prices, availability and shipping are set by each store.</p>
 </main>
 <div class="wrap" id="shipzone">
 <div class="shipwrap"><button type="button" class="shipbtn" id="shipBtn"><span class="ic">📦</span><span><b>Ship packages to your country</b><small>Get an address abroad and receive your orders anywhere</small></span></button></div>
@@ -153,6 +152,8 @@ body.ship .shipbtn{background:var(--gold);color:#2A0612}body.ship .shipbtn b,bod
 <p>Some stores don't ship to every country. With these services you get an address in the United States: you send your order there and they forward it to you.</p>
 <p class="note">Shipping and import fees are paid to the forwarding company. Check their prices before you buy.</p>
 @@shipping@@<button type="button" class="backbtn" id="shipBack"><span class="notranslate">←</span> <span>Back to stores</span></button></div></section>
+</div>
+<div class="wrap"><p class="disc">Tillya uses affiliate links: if you buy through them, we may earn a commission at no extra cost to you. Prices, availability and shipping are set by each store.</p>
 </div>
 <footer><a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Service</a>·<a href="mailto:hpind77@gmail.com">Contact</a><br><span class="notranslate" translate="no">© Tillya · DriftforgeDev</span></footer>
 
