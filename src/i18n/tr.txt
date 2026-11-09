@@ -157,3 +157,5 @@ Dünya çapında paket yönlendirme
 ABD depo adresi ve dünya çapında paket yönlendirme.
 Siteye git:
 Mağazalara dön
+Bölümler
+Kargo

@@ -28,10 +28,15 @@ h1{font:600 46px/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.18em;mar
 .disc button{background:none;border:0;color:var(--gold2);font:inherit;text-decoration:underline;cursor:pointer;padding:0}
 .disc p{margin:8px 0 0;display:none}.disc.open p{display:block}
 nav.bar{position:sticky;top:0;z-index:9;background:rgba(28,4,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav.bar .wrap{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+nav.bar .barhead{display:flex;align-items:center;gap:10px;padding:8px 16px}
+nav.bar .cur{flex:1;min-width:0;color:var(--gold2);font:600 18px "Cormorant Garamond",Georgia,serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#secBtn{flex:none;background:var(--gold);color:#2A0612;border:0;border-radius:999px;padding:7px 14px;font:600 14px Inter,sans-serif;cursor:pointer}
+#navbar{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px}
+nav.bar.closed #navbar{display:none}
 nav.bar a{flex:none;text-decoration:none;color:var(--muted);font-size:14px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
 nav.bar a.on{color:#2A0612;background:var(--gold);border-color:var(--gold);font-weight:600}
-.lang{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.25);color:var(--gold2);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font:14px Inter,sans-serif}
+.lang{position:absolute;top:12px;right:12px;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.25);color:var(--gold2);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font:14px Inter,sans-serif}
+.lang select{background:transparent;color:var(--gold2);border:0;font:inherit;max-width:150px;outline:none}.lang select option{color:#1C040C;background:#fff}
 section{margin:18px 0}
 details{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;overflow:hidden}
 summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;align-items:center;gap:12px}
@@ -61,14 +66,14 @@ footer a{margin:0 8px}
 .shipbtn .ic{font-size:30px}.shipbtn b{display:block;font:600 21px/1.2 "Cormorant Garamond",Georgia,serif;color:var(--gold2)}.shipbtn small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 .shipbtn:after{content:"›";margin-left:auto;color:var(--gold);font-size:28px}[dir=rtl] .shipbtn{text-align:right}[dir=rtl] .shipbtn:after{content:"‹";margin-left:0;margin-right:auto}
 body.ship .shipbtn{background:var(--gold);color:#2A0612}body.ship .shipbtn b,body.ship .shipbtn small{color:#2A0612}
-#shipping{display:none}body.ship main>section{display:none}body.ship main>#shipping{display:block}
+#shipping{display:none;margin-top:14px}body.ship main{display:none}body.ship #shipping{display:block}#shipzone{margin-bottom:8px}
 .ship-card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:16px}
 .ship-card h2{font:600 24px/1.2 "Cormorant Garamond",Georgia,serif;margin:0 0 6px;color:var(--gold2)}.ship-card p{font-size:14px;margin:6px 0}.ship-card .note{color:var(--muted);font-size:13px}
 .backbtn{margin-top:14px;background:none;border:1px solid var(--line);color:var(--gold2);border-radius:999px;padding:8px 16px;font:14px Inter,sans-serif;cursor:pointer}
 </style>
 </head>
 <body>
-<select class="lang notranslate" id="lang" aria-label="Language"></select>
+<label class="lang notranslate" translate="no"><span>🌐</span><select id="lang" aria-label="Language"></select></label>
 <header class="hero wrap">
 @@ICON@@
 <h1 class="notranslate">TILLYA</h1>
@@ -78,16 +83,11 @@ body.ship .shipbtn{background:var(--gold);color:#2A0612}body.ship .shipbtn b,bod
 <p>Tillya is an independent guide. Every button opens a partner store's own website, where you see their prices, shipping and returns. Purchases, payments and customer service happen on the store's site, not in Tillya.</p></div>
 </header>
 
-<nav class="bar"><div class="wrap" id="navbar">
-<a href="#women">Women</a><a href="#men">Men</a><a href="#kids">Kids &amp; Baby</a><a href="#personal">Personalized</a><a href="#wedding">Wedding</a><a href="#luxury">Luxury</a><a href="#handmade">Handmade</a><a href="#learn">Learn</a><a href="#business">Start a business</a><a href="#deals">Deals</a><a href="#guides">Guides</a>
-</div></nav>
-<div class="wrap shipwrap"><button type="button" class="shipbtn" id="shipBtn"><span class="ic">📦</span><span><b>Ship packages to your country</b><small>Get an address abroad and receive your orders anywhere</small></span></button></div>
+<nav class="bar" id="bar"><div class="wrap"><div class="barhead"><span class="cur" id="curSec"></span><button type="button" id="secBtn" aria-expanded="true"><span>Sections</span> <b class="notranslate" id="secSign">–</b></button></div><div id="navbar">
+<a href="#women">Women</a><a href="#men">Men</a><a href="#kids">Kids &amp; Baby</a><a href="#personal">Personalized</a><a href="#wedding">Wedding</a><a href="#luxury">Luxury</a><a href="#handmade">Handmade</a><a href="#learn">Learn</a><a href="#business">Start a business</a><a href="#deals">Deals</a><a href="#guides">Guides</a><a href="#shipping" id="shipChip"><span class="notranslate">📦</span> <span>Shipping</span></a>
+</div></div></nav>
 
 <main class="wrap">
-<section id="shipping"><div class="ship-card"><h2>Package forwarding</h2>
-<p>Some stores don't ship to every country. With these services you get an address in the United States: you send your order there and they forward it to you.</p>
-<p class="note">Shipping and import fees are paid to the forwarding company. Check their prices before you buy.</p>
-@@shipping@@<button type="button" class="backbtn" id="shipBack"><span class="notranslate">←</span> <span>Back to stores</span></button></div></section>
 <section id="women"><details><summary><span class="ic">💍</span><div><h2>Women</h2><small>Necklaces, earrings, rings and bracelets</small></div></summary><div class="body">
 @@women@@</div></details></section>
 
@@ -147,6 +147,13 @@ body.ship .shipbtn{background:var(--gold);color:#2A0612}body.ship .shipbtn b,bod
 
 <p class="disc">Tillya uses affiliate links: if you buy through them, we may earn a commission at no extra cost to you. Prices, availability and shipping are set by each store.</p>
 </main>
+<div class="wrap" id="shipzone">
+<div class="shipwrap"><button type="button" class="shipbtn" id="shipBtn"><span class="ic">📦</span><span><b>Ship packages to your country</b><small>Get an address abroad and receive your orders anywhere</small></span></button></div>
+<section id="shipping"><div class="ship-card"><h2>Package forwarding</h2>
+<p>Some stores don't ship to every country. With these services you get an address in the United States: you send your order there and they forward it to you.</p>
+<p class="note">Shipping and import fees are paid to the forwarding company. Check their prices before you buy.</p>
+@@shipping@@<button type="button" class="backbtn" id="shipBack"><span class="notranslate">←</span> <span>Back to stores</span></button></div></section>
+</div>
 <footer><a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Service</a>·<a href="mailto:hpind77@gmail.com">Contact</a><br><span class="notranslate" translate="no">© Tillya · DriftforgeDev</span></footer>
 
 <script>
@@ -156,17 +163,23 @@ apply(LINKS);
 fetch('links.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j)apply(j)}).catch(()=>{});
 document.getElementById('discBtn').onclick=function(){const d=document.getElementById('disc');d.classList.toggle('open');this.textContent=d.classList.contains('open')?'Hide':'About these links';if(window.__tr)window.__tr(this);};
 // sticky nav highlight
-const navs=[...document.querySelectorAll('#navbar a')];
-function hl(){let cur=navs[0];const atEnd=innerHeight+scrollY>=document.body.scrollHeight-4;for(const a of navs){const s=document.querySelector(a.getAttribute('href'));if(s&&s.getBoundingClientRect().top<200)cur=a;}if(atEnd)cur=navs[navs.length-1];navs.forEach(a=>a.classList.toggle('on',a===cur));const bar=document.getElementById('navbar');if(!cur.classList.contains('was')){navs.forEach(a=>a.classList.remove('was'));cur.classList.add('was');bar.scrollTo({left:cur.offsetLeft-bar.clientWidth/2+cur.clientWidth/2,behavior:'smooth'});}}
+const navs=[...document.querySelectorAll('#navbar a:not(#shipChip)')];
+const bar=document.getElementById('bar'),secSign=document.getElementById('secSign'),curSec=document.getElementById('curSec');
+function navOpen(o){bar.classList.toggle('closed',!o);secSign.textContent=o?'–':'+';document.getElementById('secBtn').setAttribute('aria-expanded',o);}
+document.getElementById('secBtn').onclick=()=>navOpen(bar.classList.contains('closed'));
+let autoFold=false;const barTop=bar.getBoundingClientRect().top+scrollY;
+function hl(){if(!autoFold&&scrollY>barTop+40){autoFold=true;navOpen(false);}if(document.body.classList.contains('ship')){curSec.textContent=document.getElementById('shipChip').textContent;return;}let cur=navs[0];const atEnd=innerHeight+scrollY>=document.body.scrollHeight-4;for(const a of navs){const s=document.querySelector(a.getAttribute('href'));if(s&&s.getBoundingClientRect().top<200)cur=a;}if(atEnd&&scrollY>200)cur=navs[navs.length-1];navs.forEach(a=>a.classList.toggle('on',a===cur));curSec.textContent=cur.textContent;}
 addEventListener('scroll',hl,{passive:true});
+hl();
 // shipping panel: own view, Android back closes it
-function shipOpen(){document.body.classList.add('ship');if(!(history.state&&history.state.ship))history.pushState({ship:1},'','#shipping');document.getElementById('shipping').scrollIntoView({block:'start'});scrollBy(0,-70);}
-function shipClose(){document.body.classList.remove('ship');}
+function shipOpen(){document.body.classList.add('ship');navOpen(false);autoFold=true;document.getElementById('shipChip').classList.add('on');navs.forEach(a=>a.classList.remove('on'));if(!(history.state&&history.state.ship))history.pushState({ship:1},'','#shipping');document.getElementById('shipzone').scrollIntoView({block:'start'});scrollBy(0,-60);}
+function shipClose(){document.body.classList.remove('ship');document.getElementById('shipChip').classList.remove('on');hl();}
 document.getElementById('shipBtn').onclick=()=>document.body.classList.contains('ship')?history.back():shipOpen();
 document.getElementById('shipBack').onclick=()=>history.back();
 addEventListener('popstate',e=>{if(!(e.state&&e.state.ship))shipClose();});
 if(location.hash==='#shipping'){history.replaceState({ship:1},'','#shipping');document.body.classList.add('ship');}
-navs.forEach(a=>a.addEventListener('click',()=>{if(document.body.classList.contains('ship')){shipClose();history.replaceState(null,'',location.pathname+location.search);}const d=document.querySelector(a.getAttribute('href')+' details');if(d)d.open=true;}));
+document.getElementById('shipChip').onclick=e=>{e.preventDefault();shipOpen();};
+navs.forEach(a=>a.addEventListener('click',()=>{navOpen(false);autoFold=true;if(document.body.classList.contains('ship')){shipClose();history.replaceState(null,'',location.pathname+location.search);}const d=document.querySelector(a.getAttribute('href')+' details');if(d)d.open=true;}));
 // ring size
 document.getElementById('circ').oninput=function(){const c=parseFloat(this.value),o=document.getElementById('ringOut');if(!c||c<40||c>80){o.textContent='';return;}const s=Math.round((c-36.5)/2.55*2)/2;o.innerHTML='<span class="notranslate">≈</span> <span>US size</span> <b class="notranslate">'+s+'</b>';if(window.__tr)window.__tr(o);};
 const STONES=['Garnet','Amethyst','Aquamarine','Diamond','Emerald','Pearl or Alexandrite','Ruby','Peridot','Sapphire','Opal or Tourmaline','Topaz or Citrine','Turquoise, Tanzanite or Zircon'];
@@ -175,11 +188,11 @@ document.getElementById('month').onchange=function(){const o=document.getElement
 (function(){
 const LANGS={en:'English',af:'Afrikaans',sq:'Shqip',am:'አማርኛ',ar:'العربية',hy:'Հայերեն',az:'Azərbaycan',eu:'Euskara',be:'Беларуская',bn:'বাংলা',bg:'Български',my:'မြန်မာ',ca:'Català','zh-CN':'中文（简体）','zh-TW':'中文（繁體）',hr:'Hrvatski',cs:'Čeština',da:'Dansk',nl:'Nederlands',et:'Eesti',tl:'Filipino',fi:'Suomi',fr:'Français',gl:'Galego',ka:'ქართული',de:'Deutsch',el:'Ελληνικά',gu:'ગુજરાતી',iw:'עברית',hi:'हिन्दी',hu:'Magyar',is:'Íslenska',id:'Bahasa Indonesia',it:'Italiano',ja:'日本語',kn:'ಕನ್ನಡ',kk:'Қазақ',km:'ខ្មែរ',ko:'한국어',ky:'Кыргызча',lo:'ລາວ',lv:'Latviešu',lt:'Lietuvių',mk:'Македонски',ms:'Bahasa Melayu',ml:'മലയാളം',mr:'मराठी',mn:'Монгол',ne:'नेपाली',no:'Norsk',fa:'فارسی',pl:'Polski',pt:'Português',pa:'ਪੰਜਾਬੀ',ro:'Română',ru:'Русский',sr:'Српски',si:'සිංහල',sk:'Slovenčina',sl:'Slovenščina',es:'Español',sw:'Kiswahili',sv:'Svenska',ta:'தமிழ்',te:'తెలుగు',th:'ไทย',tr:'Türkçe',uk:'Українська',ur:'اردو',vi:'Tiếng Việt',zu:'isiZulu'};
 const sel=document.getElementById('lang');
-for(const k in LANGS){const o=document.createElement('option');o.value=k;o.textContent='🌐 '+LANGS[k];sel.appendChild(o);}
+for(const k in LANGS){const o=document.createElement('option');o.value=k;o.textContent=LANGS[k];sel.appendChild(o);}
 function norm(c){c=(c||'en').toLowerCase();if(c.startsWith('zh'))return /tw|hk|mo|hant/.test(c)?'zh-TW':'zh-CN';const b=c.split('-')[0];return {fil:'tl',he:'iw',nb:'no',nn:'no',jv:'jw'}[b]||b;}
 let saved=null;try{saved=localStorage.getItem('tillya-lang')}catch(e){}
 let lang=saved||norm(navigator.languages&&navigator.languages[0]||navigator.language);
-if(!LANGS[lang]){const o=document.createElement('option');o.value=lang;o.textContent='🌐 '+lang;sel.appendChild(o);}
+if(!LANGS[lang]){const o=document.createElement('option');o.value=lang;o.textContent=lang;sel.appendChild(o);}
 sel.value=lang;
 let cache={};try{cache=JSON.parse(localStorage.getItem('tillya-tr-'+lang)||'{}')}catch(e){}
 function nodes(root){const out=[];const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(n){const p=n.parentElement;if(!p||/^(SCRIPT|STYLE|NOSCRIPT)$/.test(p.tagName)||p.closest('.notranslate,[translate=no]')||!/\p{L}/u.test(n.nodeValue))return NodeFilter.FILTER_REJECT;return NodeFilter.FILTER_ACCEPT;}});while(w.nextNode())out.push(w.currentNode);return out;}
