@@ -62,6 +62,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:24px 0 40px}
 footer a{margin:0 8px}
 [dir=rtl] summary:after{margin-left:0;margin-right:auto}
 .shipwrap{margin:18px 0 0}
+.out .warn{color:#F2B8A0}
 .shipbtn{width:100%;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;color:var(--text);font:inherit;padding:16px 18px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(180deg,var(--card2),var(--card))}
 .shipbtn .ic{font-size:26px;width:36px;text-align:center}.shipbtn b{display:block;font:600 24px/1.2 "Cormorant Garamond",Georgia,serif;color:var(--gold2)}.shipbtn small{display:block;color:var(--muted);font-size:13px}
 .shipbtn:after{content:"+";margin-left:auto;color:var(--gold);font-size:24px}body.ship .shipbtn:after{content:"–"}[dir=rtl] .shipbtn{text-align:right}[dir=rtl] .shipbtn:after{margin-left:0;margin-right:auto}
@@ -126,9 +127,8 @@ footer a{margin:0 8px}
 <section id="guides"><details><summary><span class="ic">📖</span><div><h2>Guides</h2><small>Ring sizes, birthstones, care and basic knots</small></div></summary><div class="body guide">
 <h3>Find your ring size</h3>
 <p>Wrap a thin strip of paper or string around the base of your finger, mark where it meets, and measure the length in millimeters.</p>
-<div class="tool"><label>Finger circumference (mm)<input id="circ" type="number" inputmode="decimal" min="40" max="80" placeholder="54"></label><div class="out" id="ringOut"></div></div>
-<table><tr><th>US size</th><th>Inner diameter</th><th>Circumference</th></tr>
-<tr class="notranslate"><td>5</td><td>15.7 mm</td><td>49.3 mm</td></tr><tr class="notranslate"><td>6</td><td>16.5 mm</td><td>51.9 mm</td></tr><tr class="notranslate"><td>7</td><td>17.3 mm</td><td>54.4 mm</td></tr><tr class="notranslate"><td>8</td><td>18.1 mm</td><td>57.0 mm</td></tr><tr class="notranslate"><td>9</td><td>19.0 mm</td><td>59.5 mm</td></tr><tr class="notranslate"><td>10</td><td>19.8 mm</td><td>62.1 mm</td></tr><tr class="notranslate"><td>11</td><td>20.6 mm</td><td>64.6 mm</td></tr><tr class="notranslate"><td>12</td><td>21.4 mm</td><td>67.2 mm</td></tr></table>
+<div class="tool"><label>Finger circumference (mm)<input id="circ" type="text" inputmode="decimal" maxlength="6" placeholder="54"></label><div class="out" id="ringOut" aria-live="polite"></div></div>
+<table id="ringTable"><thead><tr><th>US size</th><th>Inner diameter</th><th>Circumference</th><th>EU size</th></tr></thead><tbody class="notranslate"></tbody></table>
 <p>Tip: measure at the end of the day, when fingers are slightly larger. Between two sizes? Choose the larger one.</p>
 
 <h3>Birthstone finder</h3>
@@ -181,7 +181,14 @@ if(location.hash==='#shipping'){history.replaceState({ship:1},'','#shipping');do
 document.getElementById('shipChip').onclick=e=>{e.preventDefault();shipOpen();};
 navs.forEach(a=>a.addEventListener('click',()=>{navOpen(false);autoFold=true;if(document.body.classList.contains('ship')){shipClose();history.replaceState(null,'',location.pathname+location.search);}const d=document.querySelector(a.getAttribute('href')+' details');if(d)d.open=true;}));
 // ring size
-document.getElementById('circ').oninput=function(){const c=parseFloat(this.value),o=document.getElementById('ringOut');if(!c||c<40||c>80){o.textContent='';return;}const s=Math.round((c-36.5)/2.55*2)/2;o.innerHTML='<span class="notranslate">≈</span> <span>US size</span> <b class="notranslate">'+s+'</b>';if(window.__tr)window.__tr(o);};
+// numbers in the reader's own format (15,7 in German, 15.7 in English), always Latin digits
+function fmt(n,d){const o={minimumFractionDigits:d,maximumFractionDigits:d,numberingSystem:'latn'};try{return new Intl.NumberFormat(document.documentElement.lang||'en',o).format(n)}catch(e){return new Intl.NumberFormat('en',o).format(n)}}
+const RING=[[5,15.7,49.3],[6,16.5,51.9],[7,17.3,54.4],[8,18.1,57.0],[9,19.0,59.5],[10,19.8,62.1],[11,20.6,64.6],[12,21.4,67.2]];
+function ringTable(){document.querySelector('#ringTable tbody').innerHTML=RING.map(([us,d,c])=>'<tr><td>'+us+'</td><td>'+fmt(d,1)+' mm</td><td>'+fmt(c,1)+' mm</td><td>'+Math.round(c)+'</td></tr>').join('');}
+document.getElementById('circ').oninput=function(){const raw=this.value.trim(),c=parseFloat(raw.replace(',','.')),o=document.getElementById('ringOut');
+ if(raw===''){o.textContent='';return;}
+ if(!(c>=40&&c<=80)){o.innerHTML='<span class="warn">Enter a value between 40 and 80 mm.</span>';if(window.__tr)window.__tr(o);return;}
+ const s=Math.round((c-36.5)/2.55*2)/2;o.innerHTML='<span class="notranslate">≈</span> <span>US size</span> <b class="notranslate">'+fmt(s,s%1?1:0)+'</b> · <span>EU size</span> <b class="notranslate">'+Math.round(c)+'</b>';if(window.__tr)window.__tr(o);};
 const STONES=['Garnet','Amethyst','Aquamarine','Diamond','Emerald','Pearl or Alexandrite','Ruby','Peridot','Sapphire','Opal or Tourmaline','Topaz or Citrine','Turquoise, Tanzanite or Zircon'];
 document.getElementById('month').onchange=function(){const o=document.getElementById('stoneOut');o.innerHTML=this.selectedIndex?'<span>Your birthstone:</span> <b>'+STONES[this.selectedIndex-1]+'</b>':'';if(window.__tr)window.__tr(o);};
 // --- automatic translation (own script, no Google banner) ---
@@ -200,7 +207,7 @@ const FIX=@@FIX@@;
 async function tr(t){const k=t.trim();if(FIX[lang]&&FIX[lang][k])return FIX[lang][k];if(cache[k])return cache[k];const r=await fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='+lang+'&dt=t&q='+encodeURIComponent(k));const j=await r.json();let s=j[0].map(x=>x[0]).join('');if(/^[A-Z]/.test(k)&&s)s=s.charAt(0).toUpperCase()+s.slice(1);cache[k]=s;return s;}
 async function run(root){if(lang==='en')return;for(const n of nodes(root)){if(!n.__orig)n.__orig=n.nodeValue;const lead=n.__orig.match(/^\s*/)[0],trail=n.__orig.match(/\s*$/)[0];try{n.nodeValue=lead+await tr(n.__orig)+trail;}catch(e){}}try{localStorage.setItem('tillya-tr-'+lang,JSON.stringify(cache))}catch(e){}}
 window.__tr=el=>run(el);
-document.documentElement.lang=lang;document.documentElement.dir=['ar','iw','fa','ur'].includes(lang)?'rtl':'ltr';
+document.documentElement.lang=lang;ringTable();document.documentElement.dir=['ar','iw','fa','ur'].includes(lang)?'rtl':'ltr';
 sel.onchange=()=>{try{localStorage.setItem('tillya-lang',sel.value)}catch(e){}location.reload();};
 addEventListener('load',()=>run(document.body));
 })();

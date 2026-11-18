@@ -159,3 +159,6 @@ Go to
 Back to stores
 Sections
 Shipping
+Browse on
+EU size
+Enter a value between 40 and 80 mm.

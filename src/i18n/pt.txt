@@ -159,3 +159,6 @@ Ir para
 Voltar às lojas
 Seções
 Envios
+Ver em
+Tamanho europeu
+Digite um valor entre 40 e 80 mm.

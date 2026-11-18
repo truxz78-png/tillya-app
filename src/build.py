@@ -19,7 +19,7 @@ G={
 'macrame':S('ae-mac-cord','AliExpress','Macramé cord','Cotton cord in many colors and sizes')+S('ae-mac-kit','AliExpress','Macramé kits','Everything you need to start')+S('ae-mac-brace','AliExpress','Macramé bracelets','Ready-made handmade bracelets')+S('dh-macrame','DHgate','Macramé at wholesale prices','Cords and pieces in larger quantities'),
 'embroidery':S('ae-emb-kit','AliExpress','Embroidery kits','Embroidery hoop, threads, needles and pattern')+S('ae-emb-thread','AliExpress','Embroidery thread','Embroidery floss in many colors')+S('ae-emb-ear','AliExpress','Embroidered earrings','Handmade embroidered jewelry'),
 'diy':S('ae-diy-supp','AliExpress','Jewelry-making supplies','Clasps, wire, pliers and jewelry findings')+S('ae-diy-beads','AliExpress','Jewelry beads','Glass, crystal and stone beads')+S('dh-beads','DHgate','Jewelry beads at wholesale prices','Silver and decorative beads'),
-'learn':S('udemy-mac','Udemy','Macramé courses','Learn knots and projects step by step')+S('udemy-emb','Udemy','Embroidery courses','From basic stitches to full designs')+S('udemy-jew','Udemy','Jewelry-making courses','Bead jewelry, wire jewelry and more'),
+'learn':S('udemy-mac','Udemy','Macramé courses','Learn knots and projects step by step','Browse on')+S('udemy-emb','Udemy','Embroidery courses','From basic stitches to full designs','Browse on')+S('udemy-jew','Udemy','Jewelry-making courses','Bead jewelry, wire jewelry and more','Browse on'),
 'business':S('alibaba','Alibaba','Wholesale from manufacturers','Search "wholesale jewelry" or "macrame cord"'),
 'deals':S('italo-deals','Italojewelry','Clearance sale','Discounted pieces while stock lasts'),
 }

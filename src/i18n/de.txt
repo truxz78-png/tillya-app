@@ -159,3 +159,6 @@ Zu
 Zurück zu den Shops
 Bereiche
 Versand
+Ansehen bei
+EU-Größe
+Gib einen Wert zwischen 40 und 80 mm ein.
