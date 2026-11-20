@@ -4,13 +4,13 @@ import json, html, glob, os
 SRC = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(SRC)
 p = lambda *a: os.path.join(*a)
 L = json.load(open(p(ROOT, 'links.json'), encoding='utf-8'))
-def S(lid, brand, title, desc, label='Shop on'):
+def S(lid, brand, title, desc, label='Shop on', cls=''):
     off = html.escape(L[lid]['official'])
-    return (f'<div class="store"><div><b>{title}</b><span>{desc}</span></div>'
+    return (f'<div class="store{(" "+cls) if cls else ""}"><div><b>{title}</b><span>{desc}</span></div>'
             f'<a class="go" data-link="{lid}" href="{off}" target="_blank" rel="noopener sponsored">{label} <span class="notranslate">{brand}</span><em>Opens partner site ↗</em></a></div>\n')
 G={
 'shipping':S('planet-express','Planet Express','US address for your orders','Get a US address and ship your online purchases anywhere.','Go to')+S('shipito','Shipito','Worldwide package forwarding','US warehouse address and package forwarding worldwide.','Go to'),
-'women':S('italo-women','Italojewelry','Fashion &amp; fine jewelry','Necklaces, earrings, rings and bracelets')+S('bern-women','Bernardelli','Designer jewelry from Italy','Jewels from international designer brands'),
+'women':S('italo-women','Italojewelry','Fashion &amp; fine jewelry','Necklaces, earrings, rings and bracelets')+S('bern-women','Bernardelli','Designer jewelry from Italy','Jewels from international designer brands')+S('tatacliq-jew','Tata CLiQ','Jewelry from Indian brands','Gold, diamond, silver and fashion jewelry. Delivers within India only.',cls='india-only'),
 'men':S('italo-men','Italojewelry','Jewelry for men','Rings, chains and bracelets')+S('bern-men','Bernardelli','Designer jewelry for men','Italian designer store'),
 'kids':S('ae-kids','AliExpress','Kids jewelry','Small earrings, bracelets and necklaces')+S('ae-baby','AliExpress','Baby jewelry','Name bracelets and keepsakes'),
 'personal':S('italo-personal','Italojewelry','Personalized jewelry','Names, initials and engravings'),
