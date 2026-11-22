@@ -30,6 +30,8 @@
   "temu-women":    {"primary": "https://temu.to/k/gysvv7z5fq0", "backup": null, "official": "https://www.temu.com/", "active": "primary", "category": "women", "region": "worldwide"},
   "dh-women":      {"primary": "https://sale.dhgate.com/o9GUuK55", "backup": null, "official": "https://www.dhgate.com/wholesale/women-jewelry.html", "active": "primary", "category": "women", "region": "worldwide"},
   "shein-women":   {"primary": "https://thevospad.com/g/1kjlqr06u0d2f8e3e048f0af71e07a/?ulp=https%3A%2F%2Fwww.shein.com%2FWomen-Fashion-Jewelry-c-3632.html", "backup": null, "official": "https://www.shein.com/Women-Fashion-Jewelry-c-3632.html", "active": "primary", "category": "women", "region": "worldwide"},
+  "giva": {"primary": "https://inr.deals/track?id=tru579161545&src=backend&url=https%3A%2F%2Fwww.giva.co", "backup": null, "official": "https://www.giva.co/", "active": "primary", "category": "women", "region": "india"},
+  "bluestone": {"primary": "https://inr.deals/track?id=tru579161545&src=backend&url=https%3A%2F%2Fwww.bluestone.com", "backup": null, "official": "https://www.bluestone.com/", "active": "primary", "category": "women", "region": "india"},
   "palmonas":      {"primary": "https://tjzuh.com/g/cozq2t2pxu6b09d30bfb48f53de592/", "backup": null, "official": "https://palmonas.com/", "active": "primary", "category": "women", "region": "india"},
   "planet-express":{"primary": "https://planetexpress.com/?ref=378266", "backup": null, "official": "https://planetexpress.com", "active": "primary", "category": "shipping", "region": "worldwide"},
   "shipito":       {"primary": "https://www.shipito.com/?id_affiliate=24923", "backup": null, "official": "https://www.shipito.com", "active": "primary", "category": "shipping", "region": "worldwide"}
