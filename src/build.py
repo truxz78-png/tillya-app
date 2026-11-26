@@ -24,7 +24,7 @@ G={
 'diy':S('ae-diy-supp','AliExpress','Jewelry-making supplies','Clasps, wire, pliers and jewelry findings')+S('ae-diy-beads','AliExpress','Jewelry beads','Glass, crystal and stone beads')+S('dh-beads','DHgate','Jewelry beads at wholesale prices','Silver and decorative beads'),
 'learn':S('udemy-mac','Udemy','Macramé courses','Learn knots and projects step by step','Browse on')+S('udemy-emb','Udemy','Embroidery courses','From basic stitches to full designs','Browse on')+S('udemy-jew','Udemy','Jewelry-making courses','Bead jewelry, wire jewelry and more','Browse on'),
 'business':S('alibaba','Alibaba','Wholesale from manufacturers','Search "wholesale jewelry" or "macrame cord"'),
-'deals':S('italo-deals','Italojewelry','Clearance sale','Discounted pieces while stock lasts'),
+'deals':S('italo-deals','Italojewelry','Clearance sale','Discounted pieces while stock lasts')+S('ae-deals','AliExpress','Jewelry on sale','Rings, necklaces and earrings with big discounts')+S('shein-deals','SHEIN','Jewelry deals of the day','Trending pieces at reduced prices'),
 }
 t = open(p(SRC, 'template.html'), encoding='utf-8').read()
 FIX = {'es': json.load(open(p(SRC, 'fix_es.json'), encoding='utf-8'))}
